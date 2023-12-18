@@ -11,6 +11,7 @@ public class HongsApplication {
 		SpringApplication.run(HongsApplication.class, args);
 		System.out.println("hong");
 		System.out.println("kwak");
+		System.out.println("honghong");
 	}
 
 }
