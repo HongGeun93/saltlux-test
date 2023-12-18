@@ -12,6 +12,7 @@ public class HongsApplication {
 		System.out.println("hong");
 		System.out.println("kwak");
 		System.out.println("honghong");
+		System.out.println("ggg");
 	}
 
 }
