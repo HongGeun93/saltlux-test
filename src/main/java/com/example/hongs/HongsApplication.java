@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HongsApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(HongsApplication.class, args);
+		System.out.println("hong");
 	}
 
 }
