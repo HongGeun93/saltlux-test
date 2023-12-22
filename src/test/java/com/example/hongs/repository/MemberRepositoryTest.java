@@ -1,0 +1,33 @@
+package com.example.hongs.repository;
+
+import com.example.hongs.domain.Member;
+import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+class MemberRepositoryTest {
+
+    @Autowired
+    MemberRepository memberRepository;
+
+    @Test
+    public void testMember() {
+        // given
+        Member member = new Member();
+        member.setUsername("memberA");
+
+        // when
+        Long savedId = memberRepository.save(member);
+        Member findMember = memberRepository.find(savedId);
+
+        // then
+        Assertions.assertEquals(findMember.getId(), member.getId());
+        Assertions.assertEquals(findMember.getUsername(), member.getUsername());
+    }
+
+}
