@@ -9,11 +9,6 @@ public class HongsApplication {
 	public static void main(String[] args) {
 
 		SpringApplication.run(HongsApplication.class, args);
-		System.out.println("hong");
-		System.out.println("kwak");
-		System.out.println("honghong");
-		System.out.println("ggg");
-		System.out.println();
 	}
 
 }
