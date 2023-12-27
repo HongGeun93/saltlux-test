@@ -18,7 +18,7 @@ public class MemberService {
      * 회원가입
      */
     @Transactional
-    public Long join(Member member) throws IllegalAccessException {
+    public Long join(Member member) {
         // 중복회원
         validateDuplicateMember(member); // 중복 회원 검증
         memberRepository.save(member);
@@ -36,11 +36,11 @@ public class MemberService {
         return memberRepository.findOne(memberId);
     }
 
-    private void validateDuplicateMember(Member member) throws IllegalAccessException {
+    private void validateDuplicateMember(Member member) throws IllegalStateException {
         // exception
         List<Member> findMembers = memberRepository.findByName(member.getName());
         if (!findMembers.isEmpty()) {
-            throw new IllegalAccessException("이미 존재하는 회원입니다.");
+            throw new IllegalStateException("이미 존재하는 회원입니다.");
         }
     }
 }
