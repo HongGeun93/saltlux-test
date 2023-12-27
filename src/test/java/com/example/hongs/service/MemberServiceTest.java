@@ -23,7 +23,7 @@ public class MemberServiceTest {
     MemberRepository memberRepository;
 
     @Test
-    public void 회원가입() throws Exception {
+    public void 회원가입() {
 
         // given
         Member member = new Member();
@@ -37,7 +37,7 @@ public class MemberServiceTest {
     }
 
     @Test(expected = IllegalStateException.class)
-    public void 중복_회원_예외() throws Exception {
+    public void 중복_회원_예외() {
         // given
         Member member1 = new Member();
         member1.setName("kim");
